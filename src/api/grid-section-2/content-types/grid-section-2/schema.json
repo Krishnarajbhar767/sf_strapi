@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "grid_section_2s",
+  "info": {
+    "singularName": "grid-section-2",
+    "pluralName": "grid-section-2s",
+    "displayName": "grid-section-2"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true
+    },
+    "subHeading": {
+      "type": "string",
+      "required": true
+    },
+    "items": {
+      "type": "component",
+      "component": "grid.grid",
+      "repeatable": true,
+      "required": true,
+      "min": 3,
+      "max": 3
+    }
+  }
+}
