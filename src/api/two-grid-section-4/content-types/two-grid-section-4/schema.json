@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "two_grid_section_4s",
+  "info": {
+    "singularName": "two-grid-section-4",
+    "pluralName": "two-grid-section-4s",
+    "displayName": "two-grid-section-4"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "subHeading": {
+      "type": "string"
+    },
+    "items": {
+      "type": "component",
+      "component": "grid.grid",
+      "repeatable": true,
+      "min": 2,
+      "max": 2
+    }
+  }
+}

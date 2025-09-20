@@ -6,10 +6,6 @@
   },
   "options": {},
   "attributes": {
-    "title": {
-      "type": "string",
-      "required": true
-    },
     "slug": {
       "type": "string",
       "required": true
@@ -24,6 +20,9 @@
         "videos",
         "audios"
       ]
+    },
+    "title": {
+      "type": "string"
     }
   },
   "config": {}

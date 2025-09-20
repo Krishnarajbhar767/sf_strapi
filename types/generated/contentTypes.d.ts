@@ -414,7 +414,7 @@ export interface ApiGridSection2GridSection2 extends Struct.SingleTypeSchema {
 export interface ApiHeroSlide1HeroSlide1 extends Struct.CollectionTypeSchema {
   collectionName: 'hero_slide1s';
   info: {
-    displayName: 'Hero Slide';
+    displayName: 'Hero Slide - Section  1 & 5';
     pluralName: 'hero-slide1s';
     singularName: 'hero-slide1';
   };
@@ -425,18 +425,153 @@ export interface ApiHeroSlide1HeroSlide1 extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    heading: Schema.Attribute.String;
-    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::hero-slide1.hero-slide1'
     > &
       Schema.Attribute.Private;
-    paragraph: Schema.Attribute.RichText;
+    paragraph: Schema.Attribute.RichText & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.String & Schema.Attribute.Required;
+    top: Schema.Attribute.Boolean & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSection6SingleImageSection6SingleImage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'section_6_single_images';
+  info: {
+    displayName: 'section-6-single-image';
+    pluralName: 'section-6-single-images';
+    singularName: 'section-6-single-image';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::section-6-single-image.section-6-single-image'
+    > &
+      Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.String;
-    top: Schema.Attribute.Boolean;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSection7Section7 extends Struct.CollectionTypeSchema {
+  collectionName: 'section_7s';
+  info: {
+    displayName: 'Section-7';
+    pluralName: 'section-7s';
+    singularName: 'section-7';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::section-7.section-7'
+    > &
+      Schema.Attribute.Private;
+    paragraph: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.String & Schema.Attribute.Required;
+    slugText: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSection8Section8 extends Struct.SingleTypeSchema {
+  collectionName: 'section_8s';
+  info: {
+    displayName: 'section-8';
+    pluralName: 'section-8s';
+    singularName: 'section-8';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    btnText: Schema.Attribute.String & Schema.Attribute.Required;
+    btnUrl: Schema.Attribute.String & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::section-8.section-8'
+    > &
+      Schema.Attribute.Private;
+    paragraph: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    subHeading: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTwoGridSection4TwoGridSection4
+  extends Struct.SingleTypeSchema {
+  collectionName: 'two_grid_section_4s';
+  info: {
+    displayName: 'two-grid-section-4';
+    pluralName: 'two-grid-section-4s';
+    singularName: 'two-grid-section-4';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heading: Schema.Attribute.String;
+    items: Schema.Attribute.Component<'grid.grid', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 2;
+          min: 2;
+        },
+        number
+      >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::two-grid-section-4.two-grid-section-4'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    subHeading: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -985,6 +1120,10 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::grid-section-2.grid-section-2': ApiGridSection2GridSection2;
       'api::hero-slide1.hero-slide1': ApiHeroSlide1HeroSlide1;
+      'api::section-6-single-image.section-6-single-image': ApiSection6SingleImageSection6SingleImage;
+      'api::section-7.section-7': ApiSection7Section7;
+      'api::section-8.section-8': ApiSection8Section8;
+      'api::two-grid-section-4.two-grid-section-4': ApiTwoGridSection4TwoGridSection4;
       'api::video-section-3.video-section-3': ApiVideoSection3VideoSection3;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

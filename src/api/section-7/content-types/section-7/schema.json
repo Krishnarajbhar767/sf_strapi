@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "hero_slide1s",
+  "collectionName": "section_7s",
   "info": {
-    "singularName": "hero-slide1",
-    "pluralName": "hero-slide1s",
-    "displayName": "Hero Slide - Section  1 & 5"
+    "singularName": "section-7",
+    "pluralName": "section-7s",
+    "displayName": "Section-7"
   },
   "options": {
     "draftAndPublish": true
@@ -16,7 +16,15 @@
       "required": true
     },
     "paragraph": {
-      "type": "richtext",
+      "type": "string",
+      "required": true
+    },
+    "slugText": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "string",
       "required": true
     },
     "image": {
@@ -24,19 +32,8 @@
       "multiple": false,
       "required": true,
       "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
+        "images"
       ]
-    },
-    "slug": {
-      "type": "string",
-      "required": true
-    },
-    "top": {
-      "type": "boolean",
-      "required": true
     }
   }
 }

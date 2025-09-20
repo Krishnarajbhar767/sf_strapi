@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "section_6_single_images",
+  "info": {
+    "singularName": "section-6-single-image",
+    "pluralName": "section-6-single-images",
+    "displayName": "section-6-single-image"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "slug": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}
